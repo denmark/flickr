@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"gopkg.in/masci/flickr.v2"
+	"github.com/denmark/flickr"
 )
 
 type Photoset struct {

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"gopkg.in/masci/flickr.v2"
-	"gopkg.in/masci/flickr.v2/auth/oauth"
+	"github.com/denmark/flickr"
+	"github.com/denmark/flickr/auth/oauth"
 )
 
 func main() {

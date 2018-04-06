@@ -1,20 +1,20 @@
 package photos
 
 import (
-	"gopkg.in/masci/flickr.v2"
+	"github.com/denmark/flickr"
 )
 
 type PhotoInfo struct {
-	Id             string `xml:"id,attr"`
-	Secret         string `xml:"secret,attr"`
-	Server         string `xml:"server,attr"`
-	Farm           string `xml:"farm,attr"`
-	DateUploaded   string `xml:"dateuploaded,attr"`
-	IsFavorite     bool   `xml:"isfavorite,attr"`
-	License        string `xml:"license,attr"`
+	Id           string `xml:"id,attr"`
+	Secret       string `xml:"secret,attr"`
+	Server       string `xml:"server,attr"`
+	Farm         string `xml:"farm,attr"`
+	DateUploaded string `xml:"dateuploaded,attr"`
+	IsFavorite   bool   `xml:"isfavorite,attr"`
+	License      string `xml:"license,attr"`
 	// NOTE: one less than safety level set on upload (ie, here 0 = safe, 1 = moderate, 2 = restricted)
 	//       while on upload, 1 = safe, 2 = moderate, 3 = restricted
-	SafetyLevel    int    `xml:"safety_level,attr"` 
+	SafetyLevel    int    `xml:"safety_level,attr"`
 	Rotation       int    `xml:"rotation,attr"`
 	OriginalSecret string `xml:"originalsecret,attr"`
 	OriginalFormat string `xml:"originalformat,attr"`

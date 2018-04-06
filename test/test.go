@@ -2,7 +2,7 @@
 package test
 
 import (
-	"gopkg.in/masci/flickr.v2"
+	"github.com/denmark/flickr"
 )
 
 // Response type used by Login function
@@ -32,7 +32,6 @@ type EchoResponse struct {
 // This method requires authentication with 'read' permission.
 func Login(client *flickr.FlickrClient) (*LoginResponse, error) {
 	client.Init()
-	client.SetOAuthDefaults()
 	client.Args.Set("method", "flickr.test.login")
 	client.OAuthSign()
 

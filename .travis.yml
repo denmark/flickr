@@ -1,6 +1,6 @@
 language: go
 
-go_import_path: gopkg.in/masci/flickr.v2
+go_import_path: github.com/denmark/flickr
 
 go:
     - 1.6.2

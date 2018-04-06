@@ -3,7 +3,7 @@
 A go library to easily consume Flickr API.
 The project is currently under heavy development, so it hasn't a version number yet.
 
-[![GoDoc](https://godoc.org/gopkg.in/masci/flickr.v2?status.svg)](https://godoc.org/gopkg.in/masci/flickr.v2)
+[![GoDoc](https://godoc.org/github.com/denmark/flickr?status.svg)](https://godoc.org/github.com/denmark/flickr)
 [![Build Status](https://travis-ci.org/masci/flickr.svg)](https://travis-ci.org/masci/flickr)
 [![Coverage Status](https://coveralls.io/repos/masci/flickr/badge.svg)](https://coveralls.io/r/masci/flickr)
 
@@ -16,8 +16,8 @@ package:
 
 ```go
 import "fmt"
-import "gopkg.in/masci/flickr.v2"
-import "gopkg.in/masci/flickr.v2/photosets"
+import "github.com/denmark/flickr"
+import "github.com/denmark/flickr/photosets"
 
 // create an API client with credentials
 client := flickr.NewFlickrClient("your_apikey", "your_apisecret")
@@ -39,7 +39,7 @@ There are a number of functions that don't map any actual Flickr Api method
 `UploadFile` or `UploadReader` functions in the `flickr` package:
 
 ```go
-import "gopkg.in/masci/flickr.v2"
+import "github.com/denmark/flickr"
 
 
 // upload the image file with default (nil) options
@@ -54,7 +54,7 @@ OAuth since the original token-based method has been deprecated by Flickr. This
 is an example describing the OAuth worflow from a command line application:
 
 ```go
-import "gopkg.in/masci/flickr.v2"
+import "github.com/denmark/flickr"
 
 client := flickr.NewFlickrClient("your_apikey", "your_apisecret")
 
@@ -83,7 +83,7 @@ already mapped, you can do it manually:
 
 ```go
 import "fmt"
-import "gopkg.in/masci/flickr.v2"
+import "github.com/denmark/flickr"
 
 client := flickr.NewFlickrClient("your_apikey", "your_apisecret")
 client.Init()

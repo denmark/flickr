@@ -3,8 +3,8 @@ package test
 import (
 	"testing"
 
-	"gopkg.in/masci/flickr.v2"
-	flickErr "gopkg.in/masci/flickr.v2/error"
+	"github.com/denmark/flickr"
+	flickErr "github.com/denmark/flickr/error"
 )
 
 func TestLoginKo(t *testing.T) {
