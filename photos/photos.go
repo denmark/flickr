@@ -64,6 +64,27 @@ type PhotoInfoResponse struct {
 	Photo PhotoInfo `xml:"photo"`
 }
 
+type Size struct {
+	Label  string `xml:"label,attr"`
+	Width  string `xml:"width,attr"`
+	Height string `xml:"height,attr"`
+	Source string `xml:"source,attr"`
+	Url    string `xml:"url,attr"`
+	Media  string `xml:"media,attr"`
+}
+
+type PhotoSizes struct {
+	CanBlog     string `xml:"canblog,attr"`
+	CanPrint    string `xml:"canprint,attr"`
+	CanDownload string `xml:"candownload,attr"`
+	Sizes       []Size `xml:"size"`
+}
+
+type PhotoSizesResponse struct {
+	flickr.BasicResponse
+	PhotoSizes PhotoSizes `xml:"sizes"`
+}
+
 // Delete a photo from Flickr
 // This method requires authentication with 'delete' permission.
 func Delete(client *flickr.FlickrClient, id string) (*flickr.BasicResponse, error) {
@@ -113,6 +134,19 @@ func SetDates(client *flickr.FlickrClient, id string, datePosted string, dateTak
 	client.OAuthSign()
 
 	response := &flickr.BasicResponse{}
+	err := flickr.DoPost(client, response)
+	return response, err
+}
+
+func GetSizes(client *flickr.FlickrClient, id string) (*PhotoSizesResponse, error) {
+	client.Init()
+	client.EndpointUrl = flickr.API_ENDPOINT
+	client.HTTPVerb = "POST"
+	client.Args.Set("method", "flickr.photos.getSizes")
+	client.Args.Set("photo_id", id)
+	client.OAuthSign()
+
+	response := &PhotoSizesResponse{}
 	err := flickr.DoPost(client, response)
 	return response, err
 }
